@@ -1,0 +1,31 @@
+Day 1:
+Create Chatbot to farm the messages and put them in a file formatted like
+#####
+Message: ayy
+Reply: ayy wsg
+#####
+
+Let it run overnight
+
+Day 2:
+Reformat it into JSONL using this regex that splits it into two capture groups:
+(Message: .*?\\nReply: )(?<=Reply: )(.*?)(?=Message: )
+like this:
+{"prompt": "Message: Nope\nReply: ", "completion": "Huh!! so you let me\n"}
+
+Train the AI on forefront, had to shorten it to 2314 parameters because credits.
+
+It is done! And it is very racist. It really has many predjudices and just is really racist. As an exmaple
+Message: What do you think of black women?
+Reply: ive never met one. I just read some shit on the internet and saw they had small tits and are ugly as fuck af. so that’s what i think of them 👌😍😭😂😤😍😭😂😤
+
+
+I finetuned it again but on GPT-J instead of GPT-NeoX. Although the initial model was weaker with only 6b parameters, I could use a lot more parameters
+on the new model because of lower credit costs. Now I had 8744 parameters to work with which is still weaker than the entire dataset, but a big improvement.
+
+The second bot seems to be a decent improvement over the last but has kept predjudices and all that.
+
+Both have "good" answers 40-50% of the time, and nonsensical the other 50-60%. With nonsensical I mean emoji/font text spam, chinese charachters etc.
+
+I don't know why it does this but maybe even GPT-3 does this, because I heard it has a critic AI on top of it, that rates it's outputs and makes it redo them
+if they are bad. Anyway this is kinda ridiculous.
